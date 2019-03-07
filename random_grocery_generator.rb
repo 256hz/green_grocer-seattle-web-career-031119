@@ -70,5 +70,7 @@ def consolidate_cart(cart)
   puts combined_cart
   combined_cart
 end
+
+consolidate_cart(cart)
   
 puts "Your total is #{checkout(cart: cart, coupons: coupons)}"
