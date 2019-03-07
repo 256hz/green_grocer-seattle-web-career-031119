@@ -63,6 +63,7 @@ def consolidate_cart(cart)
   cart.each.with_index do |item, index|
     if combined_cart == [] || combined_cart.include?(item) == false
       combined_cart.push(cart[index])
+      
       combined_cart[combined_cart_index][item][:count] = 1
     else
       combined_cart[item][:count] += 1
