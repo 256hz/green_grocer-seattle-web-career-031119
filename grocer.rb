@@ -21,6 +21,7 @@ def consolidate_cart(cart)
       end
     else #add item if empty cart
       puts "cart was empty"
+      merged_cart[item_name] = {price: item[item_name][:orice], clearance: item[item_name][:clearance], :count: 1}
       #merged_cart << item
       #merged_cart[-1][item_name][:count] = 1
       puts "merged_cart:\n#{merged_cart}\n"
