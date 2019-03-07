@@ -4,9 +4,11 @@ def consolidate_cart(cart)
   cart.each{|c| puts c}
   merged_cart = {}
   cart.each_with_index do |item, index|
-    puts "cart[#{index}]"
     item_name = item.keys[0]
     puts "processing #{item_name}"
+    puts item
+    puts "cart.size = #{cart.size}"
+    puts "merged_cart.size = #{merged_cart.size}"
     if merged_cart.size != 0
       puts "merged_cart not empty"
       puts "#{merged_cart.keys}"
