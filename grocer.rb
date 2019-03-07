@@ -1,3 +1,5 @@
+require 'pry'
+
 def consolidate_cart(cart)
   merged_cart = []
   cart.each do |item|
