@@ -52,7 +52,7 @@ def checkout(cart, coupons)
     subtotal += cart[item[0]][:price] * cart[item[0]][:count]
   end
   if subtotal > 100
-    subtotal *= .9
+    subtotal *= 0.9
     subtotal = subtotal.round(2)
   end
   subtotal
