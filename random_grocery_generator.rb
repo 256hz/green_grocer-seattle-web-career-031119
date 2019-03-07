@@ -59,13 +59,13 @@ binding.pry
 
 def consolidate_cart(cart)
   combined_cart = []
-  cart.each do |item|
-    item.each do |k, v|
-    if combined_cart == {} || combined_cart.include?(k) == false
-      cart[item].each do |k, v|
-        combined_cart[item][k] = v
-      end
-      combined_cart[item][:count] = 1
+  cart.each.with_index do |item, index|
+    if combined_cart == [] || combined_cart.include?(item) == false
+      combined_cart.push({name =>})
+      
+      item.each do |name, traits|
+        traits.each do |trait|
+        combined_cart[item][:count] = 1
     else
       combined_cart[item][:count] += 1
     end
