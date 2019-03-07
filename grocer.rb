@@ -5,7 +5,9 @@ def consolidate_cart(cart)
   merged_cart = []
   cart.each do |item|
     item_name = item.keys[0]
+    puts "processing #{item_name}"
     if merged_cart != []
+      puts "merged_cart not empty"
       merged_cart_items = []
       merged_cart.each {|i| merged_cart_items << i.keys[0]}
       puts "#{merged_cart_items}"
