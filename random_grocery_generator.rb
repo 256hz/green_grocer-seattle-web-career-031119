@@ -54,4 +54,17 @@ coupons.each do |coupon|
 	puts "Get #{coupon[:item].capitalize} for #{coupon[:cost]} when you by #{coupon[:num]}"
 end
 
+def consolidate_cart(cart)
+  combined_cart = {}
+  cart.keys.each do |item|
+    if combined_cart.include?(item) == false
+      cart[item].each do |k, v|
+        combined_cart[item][k] = v
+    else
+      combined_cart[item][:count] += 1
+    end
+  end
+  combined_cart
+end
+  
 puts "Your total is #{checkout(cart: cart, coupons: coupons)}"
