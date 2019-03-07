@@ -65,14 +65,12 @@ end
 
 def consolidate_cart(cart)
   combined_cart = []
-  combined_cart_index = 0
   cart.each.with_index do |item, index|
     binding.pry
-    if combined_cart == [] || combined_cart.include_hash?(item) == false
+    if combined_cart == [] || combined_cart[0].include_hash?(item) == false
       combined_cart.push(cart[index])
       item_name = item.keys[0]
-      combined_cart[combined_cart_index][item_name][:count] = 1
-      combined_cart_index += 1
+      combined_cart[-1][item_name][:count] = 1
     else
       combined_cart.each.with_index do |comb_item, comb_index|
         if item == comb_item
