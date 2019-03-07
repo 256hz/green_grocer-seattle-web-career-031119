@@ -9,15 +9,13 @@ def consolidate_cart(cart)
     puts item
     puts "cart.size = #{cart.size}"
     puts "merged_cart.size = #{merged_cart.size}"
-    if merged_cart.size > 1
+    if merged_cart.size > 1                               #if items in cart, check for duplicate
       puts "merged_cart not empty"
       puts "#{merged_cart.keys}"
       if merged_cart.keys.include?(item_name) == false    #new item's name not found in merged items
         merged_cart[item_name] = {price: item[item_name][:price], clearance: item[item_name][:clearance], count: 1}
         puts "#{item} not found in merged_cart, added"
-        #merged_cart[-1][item_name][:count] = 1
       else                                                #new item's name found
-        #mc_index = merged_cart.index{|i| i.keys[0] == item_name}
         merged_cart[item_name][:count] += 1
         puts "duplicate item found, count = #{merged_cart[item_name][:count]}"
       end
