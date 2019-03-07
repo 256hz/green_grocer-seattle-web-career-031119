@@ -47,5 +47,13 @@ def checkout(cart, coupons)
   cart = consolidate_cart(cart)
   cart = apply_coupons(cart, coupons)
   cart = apply_clearance(cart)
-  #cart.each do |item|
+  subtotal = 0
+  cart.each do |item|
+    subtotal += cart[item[0]][:price] * cart[item[0]][:count]
+  end
+  if subtotal > 100
+    subtotal *= .9
+    subtotal = subtotal.round(2)
+  end
+  subtotal
 end
