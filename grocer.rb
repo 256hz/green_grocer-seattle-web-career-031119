@@ -19,8 +19,10 @@ def consolidate_cart(cart)
       merged_cart << item
       merged_cart[-1][item_name][:count] = 1
     end
+    puts merged_cart
   end
   #binding.pry
+  
   merged_cart
 end
 
