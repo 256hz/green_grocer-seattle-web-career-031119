@@ -55,13 +55,6 @@ coupons.each do |coupon|
 	puts "Get #{coupon[:item].capitalize} for #{coupon[:cost]} when you by #{coupon[:num]}"
 end
 
-#binding.pry
-
-def consolidate_cart(cart)
-
-end
-
-
 consolidate_cart(cart)
   
 puts "Your total is #{checkout(cart: cart, coupons: coupons)}"
