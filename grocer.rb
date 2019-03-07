@@ -26,7 +26,7 @@ def apply_coupons(cart, coupons)
       puts "found in cart keys, enough items in cart"
       cart[item_name][:count] -= coupon[:num]
       puts "adding #{item_name} W/COUPON"
-      cart["#{item_name} W/COUPON"] = {price: coupon[:price], clearance: cart[item_name][:clearance], count: 1}
+      cart["#{item_name} W/COUPON"] = {price: coupon[:cost], clearance: cart[item_name][:clearance], count: 1}
     end
   end
   cart
