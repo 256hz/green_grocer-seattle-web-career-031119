@@ -1,4 +1,5 @@
 require_relative 'grocer'
+require 'pry'
 
 def items
 	[
@@ -64,6 +65,7 @@ def consolidate_cart(cart)
     else
       combined_cart[item][:count] += 1
     end
+    binding.pry
   end
   puts combined_cart
   combined_cart
