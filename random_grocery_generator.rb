@@ -1,6 +1,12 @@
 require_relative 'grocer'
 require 'pry'
 
+class Hash
+  def include_hash?(hash)
+    merge(hash) == self
+  end
+end
+
 def items
 	[
 		{"AVOCADO" => {:price => 3.00, :clearance => true}},
