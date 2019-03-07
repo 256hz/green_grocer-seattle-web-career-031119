@@ -34,6 +34,7 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
+  puts cart
   cart.each_with_index do |item, index|
     puts cart[index]
     if cart[index][:clearance] == true
