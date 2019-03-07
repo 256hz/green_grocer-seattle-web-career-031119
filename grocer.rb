@@ -7,7 +7,7 @@ def consolidate_cart(cart)
     puts "cart[#{index}]"
     item_name = item.keys[0]
     puts "processing #{item_name}"
-    if merged_cart != {}
+    if merged_cart.size != 0
       puts "merged_cart not empty"
       puts "#{merged_cart.keys}"
       if merged_cart.keys.include?(item_name) == false    #new item's name not found in merged items
