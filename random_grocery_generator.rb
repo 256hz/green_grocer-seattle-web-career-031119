@@ -69,7 +69,8 @@ def consolidate_cart(cart)
         merged_cart << item
         merged_cart[-1][item_name][:count] = 1
       else
-        merged_cart[merged_cart.index(item_name)][:count] += 1
+        mc_index = merged_cart.index{|i| i.keys[0] = item_name}
+        merged_cart[mc_index][:count] += 1
       end
     else
       merged_cart << item
