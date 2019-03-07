@@ -69,11 +69,11 @@ def consolidate_cart(cart)
     else
       combined_cart.each.with_index do |comb_item, comb_index|
         if item == comb_item
+          binding.pry
           combined_cart[comb_index][item.keys][:count] += 1
         end
       end
     end
-    binding.pry
   end
   puts combined_cart
   combined_cart
