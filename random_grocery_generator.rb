@@ -55,7 +55,7 @@ coupons.each do |coupon|
 	puts "Get #{coupon[:item].capitalize} for #{coupon[:cost]} when you by #{coupon[:num]}"
 end
 
-#binding.pry
+binding.pry
 
 def consolidate_cart(cart)
   combined_cart = {}
