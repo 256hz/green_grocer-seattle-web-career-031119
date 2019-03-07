@@ -5,7 +5,7 @@ def consolidate_cart(cart)
   merged_cart = {}
   cart.each_with_index do |item, index|
     item_name = item.keys[0]
-    puts "processing #{item_name}"
+    puts "processing cart[#{index}] - #{item_name}"
     puts item
     puts "cart.size = #{cart.size}"
     puts "merged_cart.size = #{merged_cart.size}"
@@ -24,8 +24,6 @@ def consolidate_cart(cart)
     else #add item if empty cart
       puts "cart was empty"
       merged_cart[item_name] = {price: item[item_name][:price], clearance: item[item_name][:clearance], count: 1}
-      #merged_cart << item
-      #merged_cart[-1][item_name][:count] = 1
       puts "merged_cart:\n#{merged_cart}\n"
     end
     puts merged_cart + "\n"
