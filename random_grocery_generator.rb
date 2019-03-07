@@ -1,12 +1,6 @@
 require_relative 'grocer'
 require 'pry'
 
-class Hash
-  def include_hash?(hash)
-    merge(hash) == self
-  end
-end
-
 def items
 	[
 		{"AVOCADO" => {:price => 3.00, :clearance => true}},
@@ -31,7 +25,7 @@ end
 
 def generate_cart
 	[].tap do |cart|
-		rand(20).times do
+		rand(10..20).times do
 			cart.push(items.sample)
 		end
 	end
@@ -64,26 +58,14 @@ end
 #binding.pry
 
 def consolidate_cart(cart)
-  combined_cart = []
-  cart.each.with_index do |item, index|
-    binding.pry
-    items_in_cart = []
-    combined_cart.each{|i| items_in_cart << i.keys[0]}
-    end
-    if combined_cart == [] || combined_cart[0].include_hash?(item) == false
-      combined_cart.push(cart[index])
-      item_name = item.keys[0]
-      combined_cart[-1][item_name][:count] = 1
-    else
-      combined_cart.each.with_index do |comb_item, comb_index|
-        if item == comb_item
-          combined_cart[comb_index][item.keys][:count] += 1
-        end
-      end
-    end
-  end
-  puts combined_cart
-  combined_cart
+  merged_cart = []
+  cart.each do |item|
+    if merged_cart != []
+      merged_cart_items = merged_cart.each {|i| i.keys[0]}
+      if merged_cart_items.include?(item.keys[0]) == false
+        merged_cart << item
+        merged_cart[-1][item.]
+  merged_cart
 end
 
 consolidate_cart(cart)
