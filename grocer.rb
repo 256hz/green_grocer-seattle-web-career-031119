@@ -20,13 +20,13 @@ end
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     item_name = coupon[:item]
-    puts item_name
     if cart.keys.include?(item_name) &&
                 coupon[:num] <= cart[item_name][:count]
-      puts "found in cart keys, enough items in cart"
       cart[item_name][:count] -= coupon[:num]
-      puts "adding #{item_name} W/COUPON"
-      cart["#{item_name} W/COUPON"] = {price: coupon[:cost], clearance: cart[item_name][:clearance], count: 1}
+      if cart["#{item_name} W/COUPON"] == nil
+        cart["#{item_name} W/COUPON"] = {price: coupon[:cost], clearance: cart[item_name][:clearance], count: 1}
+      else
+        cart["#{item_name} W/COUPON"][:count] +=1
     end
   end
   cart
