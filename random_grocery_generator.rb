@@ -65,7 +65,6 @@ def consolidate_cart(cart)
       combined_cart.push(cart[index])
       combined_cart[combined_cart_index][item][:count] = 1
       end
-    end
     else
       combined_cart[item][:count] += 1
     end
