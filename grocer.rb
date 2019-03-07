@@ -3,7 +3,8 @@ require 'pry'
 def consolidate_cart(cart)
   puts "starting cart:\n#{cart}"
   merged_cart = []
-  cart.each do |item|
+  cart.each_with_index do |item, index|
+    puts "cart[#{index}]"
     item_name = item.keys[0]
     puts "processing #{item_name}"
     if merged_cart != []
@@ -25,6 +26,7 @@ def consolidate_cart(cart)
       puts "cart was empty"
       merged_cart << item
       merged_cart[-1][item_name][:count] = 1
+      puts "merged_cart:\n#{merged_cart}"
     end
     puts merged_cart + "\n"
   end
