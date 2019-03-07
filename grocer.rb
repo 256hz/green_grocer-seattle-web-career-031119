@@ -11,7 +11,7 @@ def consolidate_cart(cart)
       puts "merged_cart not empty"
       puts "#{merged_cart.keys}"
       if merged_cart.keys.include?(item_name) == false    #new item's name not found in merged items
-        merged_cart[item_name] = {price: item[item_name][:orice], clearance: item[item_name][:clearance], count: 1}
+        merged_cart[item_name] = {price: item[item_name][:price], clearance: item[item_name][:clearance], count: 1}
         puts "#{item} not found in merged_cart, added"
         #merged_cart[-1][item_name][:count] = 1
       else                                                #new item's name found
@@ -21,7 +21,7 @@ def consolidate_cart(cart)
       end
     else #add item if empty cart
       puts "cart was empty"
-      merged_cart[item_name] = {price: item[item_name][:orice], clearance: item[item_name][:clearance], count: 1}
+      merged_cart[item_name] = {price: item[item_name][:price], clearance: item[item_name][:clearance], count: 1}
       #merged_cart << item
       #merged_cart[-1][item_name][:count] = 1
       puts "merged_cart:\n#{merged_cart}\n"
