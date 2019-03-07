@@ -74,10 +74,10 @@ def consolidate_cart(cart)
       merged_cart[-1][item_name][:count] = 1
     end
   end
+  binding.pry
   merged_cart
 end
 
-binding.pry
 
 consolidate_cart(cart)
   
