@@ -60,11 +60,18 @@ end
 def consolidate_cart(cart)
   merged_cart = []
   cart.each do |item|
+    item_name = item.keys[0]
     if merged_cart != []
       merged_cart_items = merged_cart.each {|i| i.keys[0]}
-      if merged_cart_items.include?(item.keys[0]) == false
+      if merged_cart_items.include?(item_name) == false
         merged_cart << item
-        merged_cart[-1][item.]
+        merged_cart[-1][item_name][:count] = 1
+      else
+        merged_cart[item_name][:count] += 1
+      end
+    else
+      merged_cart << item
+      merged_cart[-1]
   merged_cart
 end
 
