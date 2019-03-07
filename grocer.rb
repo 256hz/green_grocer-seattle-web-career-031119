@@ -1,9 +1,9 @@
 require 'pry'
 
 def consolidate_cart(cart)
-  puts "starting cart:\n#{cart}"
+  puts "#{cart.each{|c| puts c}}"
   merged_cart = {}
-  cart[0].each_with_index do |item, index|
+  cart.each_with_index do |item, index|
     puts "cart[#{index}]"
     item_name = item.keys[0]
     puts "processing #{item_name}"
