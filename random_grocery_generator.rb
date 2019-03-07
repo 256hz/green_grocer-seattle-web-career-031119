@@ -59,7 +59,7 @@ binding.pry
 
 def consolidate_cart(cart)
   combined_cart = {}
-  cart.keys.each do |item|
+  cart.each do |item|
     if combined_cart.keys.include?(item) == false
       cart[item].each do |k, v|
         combined_cart[item][k] = v
