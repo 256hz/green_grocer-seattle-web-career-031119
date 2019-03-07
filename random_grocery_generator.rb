@@ -64,7 +64,6 @@ def consolidate_cart(cart)
     if combined_cart == [] || combined_cart.include?(item) == false
       combined_cart.push(cart[index])
       combined_cart[combined_cart_index][item][:count] = 1
-      end
     else
       combined_cart[item][:count] += 1
     end
