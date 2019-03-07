@@ -71,7 +71,8 @@ def consolidate_cart(cart)
       end
     else
       merged_cart << item
-      merged_cart[-1]
+      merged_cart[-1][item_name][:count] = 1
+    end
   merged_cart
 end
 
