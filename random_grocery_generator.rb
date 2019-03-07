@@ -62,7 +62,8 @@ def consolidate_cart(cart)
   cart.each do |item|
     item_name = item.keys[0]
     if merged_cart != []
-      merged_cart_items = merged_cart.each {|i| i.keys[0]}
+      merged_cart_items = []
+      merged_cart.each {|i| merged_cart_items << i.keys[0]}
       binding.pry
       if merged_cart_items.include?(item_name) == false
         merged_cart << item
