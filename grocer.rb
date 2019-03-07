@@ -1,6 +1,7 @@
 require 'pry'
 
 def consolidate_cart(cart)
+  puts "starting cart:\n#{cart}"
   merged_cart = []
   cart.each do |item|
     item_name = item.keys[0]
